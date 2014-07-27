@@ -24,8 +24,9 @@ void MP3Init( WORD mode)
     MP3_CS_Config();        // make xCs output
     MP3_DCS_Config();       // make xDCs output
 
-    MP3_SPICON1 = 0x007C;   // cke=0 and ckp=1, master 8-bit, pre 1:64
-    MP3_SPIENABLE = 1;      // on
+    MP3_SPIENABLE = 0;      // SPI off
+    MP3_SPICON1 = 0x0060;   // cke=0 and ckp=1, master 8-bit, pre 1:64
+    MP3_SPIENABLE = 1;      // SPI on
 
     DelayMs( 10);           // give time to reset
     MP3_RST_Disable();      // release reset
@@ -42,7 +43,9 @@ void MP3Init( WORD mode)
     writeMP3Register( MP3_REG_CLOCKF, 0x2000);
 
     // can change to full speed now
+    MP3_SPIENABLE = 0;      // SPI off
     MP3_SPICON1 = 0x007E;
+    MP3_SPIENABLE = 1;      // SPI on
 
 } // MP3Init
 
