@@ -2,7 +2,7 @@
  * Project: 4-15Tiles
  * File:    main.c
  *
- * Requires: MAL 1302
+ * Requires: MAL 1306
  */
 
 #include "PICconfig.h"

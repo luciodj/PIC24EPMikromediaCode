@@ -45,17 +45,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../Microchip/Graphics/Drivers/HX8347.c ../Microchip/Common/TimeDelay.c ../Microchip/Graphics/Primitive.c ../Microchip/Graphics/Drivers/IL9341.c ../uMB/LCDTerminal.c ../uMB/LCDTerminalFont.c ../uMB/TouchScreen.c ../uMB/TouchScreenResistive.c ../uMB/uMedia.c ../uMB/M25P80.c ../uMB/drv_spi.c ../Microchip/USB/usb_device.c "../Microchip/USB/HID Device Driver/usb_function_hid.c" usb_descriptors.c main.c ../Microchip/USB/usb_hal_pic24e.c
+SOURCEFILES_QUOTED_IF_SPACED=../Microchip/Graphics/Drivers/HX8347.c ../Microchip/Common/TimeDelay.c ../Microchip/Graphics/Primitive.c ../Microchip/Graphics/Drivers/IL9341.c ../uMB/LCDTerminal.c ../uMB/LCDTerminalFont.c ../uMB/TouchScreen.c ../uMB/TouchScreenResistive.c ../uMB/uMedia.c ../uMB/M25P80.c ../uMB/drv_spi.c ../Microchip/USB/usb_device.c "../Microchip/USB/HID Device Driver/usb_function_hid.c" ../Microchip/USB/usb_hal_pic24e.c usb_descriptors.c main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1575306571/HX8347.o ${OBJECTDIR}/_ext/221508487/TimeDelay.o ${OBJECTDIR}/_ext/1713430119/Primitive.o ${OBJECTDIR}/_ext/1575306571/IL9341.o ${OBJECTDIR}/_ext/1360937979/LCDTerminal.o ${OBJECTDIR}/_ext/1360937979/LCDTerminalFont.o ${OBJECTDIR}/_ext/1360937979/TouchScreen.o ${OBJECTDIR}/_ext/1360937979/TouchScreenResistive.o ${OBJECTDIR}/_ext/1360937979/uMedia.o ${OBJECTDIR}/_ext/1360937979/M25P80.o ${OBJECTDIR}/_ext/1360937979/drv_spi.o ${OBJECTDIR}/_ext/343710134/usb_device.o ${OBJECTDIR}/_ext/1295437596/usb_function_hid.o ${OBJECTDIR}/usb_descriptors.o ${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1575306571/HX8347.o.d ${OBJECTDIR}/_ext/221508487/TimeDelay.o.d ${OBJECTDIR}/_ext/1713430119/Primitive.o.d ${OBJECTDIR}/_ext/1575306571/IL9341.o.d ${OBJECTDIR}/_ext/1360937979/LCDTerminal.o.d ${OBJECTDIR}/_ext/1360937979/LCDTerminalFont.o.d ${OBJECTDIR}/_ext/1360937979/TouchScreen.o.d ${OBJECTDIR}/_ext/1360937979/TouchScreenResistive.o.d ${OBJECTDIR}/_ext/1360937979/uMedia.o.d ${OBJECTDIR}/_ext/1360937979/M25P80.o.d ${OBJECTDIR}/_ext/1360937979/drv_spi.o.d ${OBJECTDIR}/_ext/343710134/usb_device.o.d ${OBJECTDIR}/_ext/1295437596/usb_function_hid.o.d ${OBJECTDIR}/usb_descriptors.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1575306571/HX8347.o ${OBJECTDIR}/_ext/221508487/TimeDelay.o ${OBJECTDIR}/_ext/1713430119/Primitive.o ${OBJECTDIR}/_ext/1575306571/IL9341.o ${OBJECTDIR}/_ext/1360937979/LCDTerminal.o ${OBJECTDIR}/_ext/1360937979/LCDTerminalFont.o ${OBJECTDIR}/_ext/1360937979/TouchScreen.o ${OBJECTDIR}/_ext/1360937979/TouchScreenResistive.o ${OBJECTDIR}/_ext/1360937979/uMedia.o ${OBJECTDIR}/_ext/1360937979/M25P80.o ${OBJECTDIR}/_ext/1360937979/drv_spi.o ${OBJECTDIR}/_ext/343710134/usb_device.o ${OBJECTDIR}/_ext/1295437596/usb_function_hid.o ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o ${OBJECTDIR}/usb_descriptors.o ${OBJECTDIR}/main.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1575306571/HX8347.o.d ${OBJECTDIR}/_ext/221508487/TimeDelay.o.d ${OBJECTDIR}/_ext/1713430119/Primitive.o.d ${OBJECTDIR}/_ext/1575306571/IL9341.o.d ${OBJECTDIR}/_ext/1360937979/LCDTerminal.o.d ${OBJECTDIR}/_ext/1360937979/LCDTerminalFont.o.d ${OBJECTDIR}/_ext/1360937979/TouchScreen.o.d ${OBJECTDIR}/_ext/1360937979/TouchScreenResistive.o.d ${OBJECTDIR}/_ext/1360937979/uMedia.o.d ${OBJECTDIR}/_ext/1360937979/M25P80.o.d ${OBJECTDIR}/_ext/1360937979/drv_spi.o.d ${OBJECTDIR}/_ext/343710134/usb_device.o.d ${OBJECTDIR}/_ext/1295437596/usb_function_hid.o.d ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d ${OBJECTDIR}/usb_descriptors.o.d ${OBJECTDIR}/main.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/1575306571/HX8347.o ${OBJECTDIR}/_ext/221508487/TimeDelay.o ${OBJECTDIR}/_ext/1713430119/Primitive.o ${OBJECTDIR}/_ext/1575306571/IL9341.o ${OBJECTDIR}/_ext/1360937979/LCDTerminal.o ${OBJECTDIR}/_ext/1360937979/LCDTerminalFont.o ${OBJECTDIR}/_ext/1360937979/TouchScreen.o ${OBJECTDIR}/_ext/1360937979/TouchScreenResistive.o ${OBJECTDIR}/_ext/1360937979/uMedia.o ${OBJECTDIR}/_ext/1360937979/M25P80.o ${OBJECTDIR}/_ext/1360937979/drv_spi.o ${OBJECTDIR}/_ext/343710134/usb_device.o ${OBJECTDIR}/_ext/1295437596/usb_function_hid.o ${OBJECTDIR}/usb_descriptors.o ${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o
+OBJECTFILES=${OBJECTDIR}/_ext/1575306571/HX8347.o ${OBJECTDIR}/_ext/221508487/TimeDelay.o ${OBJECTDIR}/_ext/1713430119/Primitive.o ${OBJECTDIR}/_ext/1575306571/IL9341.o ${OBJECTDIR}/_ext/1360937979/LCDTerminal.o ${OBJECTDIR}/_ext/1360937979/LCDTerminalFont.o ${OBJECTDIR}/_ext/1360937979/TouchScreen.o ${OBJECTDIR}/_ext/1360937979/TouchScreenResistive.o ${OBJECTDIR}/_ext/1360937979/uMedia.o ${OBJECTDIR}/_ext/1360937979/M25P80.o ${OBJECTDIR}/_ext/1360937979/drv_spi.o ${OBJECTDIR}/_ext/343710134/usb_device.o ${OBJECTDIR}/_ext/1295437596/usb_function_hid.o ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o ${OBJECTDIR}/usb_descriptors.o ${OBJECTDIR}/main.o
 
 # Source Files
-SOURCEFILES=../Microchip/Graphics/Drivers/HX8347.c ../Microchip/Common/TimeDelay.c ../Microchip/Graphics/Primitive.c ../Microchip/Graphics/Drivers/IL9341.c ../uMB/LCDTerminal.c ../uMB/LCDTerminalFont.c ../uMB/TouchScreen.c ../uMB/TouchScreenResistive.c ../uMB/uMedia.c ../uMB/M25P80.c ../uMB/drv_spi.c ../Microchip/USB/usb_device.c ../Microchip/USB/HID Device Driver/usb_function_hid.c usb_descriptors.c main.c ../Microchip/USB/usb_hal_pic24e.c
+SOURCEFILES=../Microchip/Graphics/Drivers/HX8347.c ../Microchip/Common/TimeDelay.c ../Microchip/Graphics/Primitive.c ../Microchip/Graphics/Drivers/IL9341.c ../uMB/LCDTerminal.c ../uMB/LCDTerminalFont.c ../uMB/TouchScreen.c ../uMB/TouchScreenResistive.c ../uMB/uMedia.c ../uMB/M25P80.c ../uMB/drv_spi.c ../Microchip/USB/usb_device.c ../Microchip/USB/HID Device Driver/usb_function_hid.c ../Microchip/USB/usb_hal_pic24e.c usb_descriptors.c main.c
 
 
 CFLAGS=
@@ -170,6 +170,13 @@ ${OBJECTDIR}/_ext/1295437596/usb_function_hid.o: ../Microchip/USB/HID\ Device\ D
 	${MP_CC} $(MP_EXTRA_CC_PRE)  "../Microchip/USB/HID Device Driver/usb_function_hid.c"  -o ${OBJECTDIR}/_ext/1295437596/usb_function_hid.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1295437596/usb_function_hid.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -O1 -I"." -I"../Microchip/Include" -I"../uMB" -msmart-io=0 -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1295437596/usb_function_hid.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
+${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o: ../Microchip/USB/usb_hal_pic24e.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/343710134 
+	@${RM} ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d 
+	@${RM} ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  ../Microchip/USB/usb_hal_pic24e.c  -o ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -O1 -I"." -I"../Microchip/Include" -I"../uMB" -msmart-io=0 -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 ${OBJECTDIR}/usb_descriptors.o: usb_descriptors.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR} 
 	@${RM} ${OBJECTDIR}/usb_descriptors.o.d 
@@ -183,13 +190,6 @@ ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -O1 -I"." -I"../Microchip/Include" -I"../uMB" -msmart-io=0 -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
-${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o: ../Microchip/USB/usb_hal_pic24e.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/343710134 
-	@${RM} ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d 
-	@${RM} ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  ../Microchip/USB/usb_hal_pic24e.c  -o ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -O1 -I"." -I"../Microchip/Include" -I"../uMB" -msmart-io=0 -msfr-warn=off
-	@${FIXDEPS} "${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 else
 ${OBJECTDIR}/_ext/1575306571/HX8347.o: ../Microchip/Graphics/Drivers/HX8347.c  nbproject/Makefile-${CND_CONF}.mk
@@ -283,6 +283,13 @@ ${OBJECTDIR}/_ext/1295437596/usb_function_hid.o: ../Microchip/USB/HID\ Device\ D
 	${MP_CC} $(MP_EXTRA_CC_PRE)  "../Microchip/USB/HID Device Driver/usb_function_hid.c"  -o ${OBJECTDIR}/_ext/1295437596/usb_function_hid.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/1295437596/usb_function_hid.o.d"      -mno-eds-warn  -g -omf=elf -O1 -I"." -I"../Microchip/Include" -I"../uMB" -msmart-io=0 -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1295437596/usb_function_hid.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
+${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o: ../Microchip/USB/usb_hal_pic24e.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} ${OBJECTDIR}/_ext/343710134 
+	@${RM} ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d 
+	@${RM} ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  ../Microchip/USB/usb_hal_pic24e.c  -o ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d"      -mno-eds-warn  -g -omf=elf -O1 -I"." -I"../Microchip/Include" -I"../uMB" -msmart-io=0 -msfr-warn=off
+	@${FIXDEPS} "${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
 ${OBJECTDIR}/usb_descriptors.o: usb_descriptors.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} ${OBJECTDIR} 
 	@${RM} ${OBJECTDIR}/usb_descriptors.o.d 
@@ -296,13 +303,6 @@ ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/main.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d"      -mno-eds-warn  -g -omf=elf -O1 -I"." -I"../Microchip/Include" -I"../uMB" -msmart-io=0 -msfr-warn=off
 	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
-${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o: ../Microchip/USB/usb_hal_pic24e.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} ${OBJECTDIR}/_ext/343710134 
-	@${RM} ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d 
-	@${RM} ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  ../Microchip/USB/usb_hal_pic24e.c  -o ${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d"      -mno-eds-warn  -g -omf=elf -O1 -I"." -I"../Microchip/Include" -I"../uMB" -msmart-io=0 -msfr-warn=off
-	@${FIXDEPS} "${OBJECTDIR}/_ext/343710134/usb_hal_pic24e.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

@@ -5,10 +5,8 @@
 
 #include "xc.h"
 #include <rtcc.h>
-#include <PwrMgnt.h>
 
 #include "PICconfig.h"
-#include "uMedia.h"
 
 #define LED_BLED                _RD2
 #define ConfigureBacklight()    _TRISD2 = 0
@@ -33,7 +31,8 @@ int main( void )
     // 2. main loop
     while( 1)
     {
-        mPWRMGNT_GotoSleepMode();   // go to sleep
+        Sleep();   // go to sleep
+
 
     } // main loop
 

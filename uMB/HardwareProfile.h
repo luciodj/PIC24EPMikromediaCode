@@ -15,7 +15,7 @@
 /*********************************************************************
  * PIC24 clock 
  ********************************************************************/
-#define GetSystemClock()            (128000000ull)
+#define GetSystemClock()            (48000000ull)
 #define	GetPeripheralClock()        (GetSystemClock()/2)
 #define GetInstructionClock()       (GetSystemClock()/2)
 
