@@ -15,7 +15,7 @@
 /*********************************************************************
  * PIC24 clock 
  ********************************************************************/
-#define GetSystemClock()            (48000000ull)
+#define GetSystemClock()            (80000000ull)
 #define	GetPeripheralClock()        (GetSystemClock()/2)
 #define GetInstructionClock()       (GetSystemClock()/2)
 
@@ -39,9 +39,9 @@
 // interface
 #define USE_GFX_PMP
 #define USE_8BIT_PMP
-#define PMP_DATA_SETUP_TIME             (30)
-#define PMP_DATA_WAIT_TIME              (30)
-#define PMP_DATA_HOLD_TIME              (30)
+#define PMP_DATA_SETUP_TIME             (0)
+#define PMP_DATA_WAIT_TIME              (0)
+#define PMP_DATA_HOLD_TIME              (0)
 
 /*********************************************************************
  * Image orientation (can be 0, 90, 180, 270 degrees).

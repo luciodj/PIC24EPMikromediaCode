@@ -38,12 +38,12 @@ void uMBInit( void)
 #ifdef _SFLASH
     DRV_SPI_INIT_DATA spi_config = SPI_FLASH_CONFIG;
 #endif
-    // 1. init clock for 60MIPS operation
+    // 1. init clock for 40MIPS operation
     // Fosc= Fin*M/(N1*N2), Fcy=Fosc/2
-    //Fosc = 8MHz * 60/(2*2) = 120MHz for 8MHz input clock
-    PLLFBD = 62;                    // M = (PLLFDB+2)
-    CLKDIVbits.PLLPOST = 1;         // N1=2
-    CLKDIVbits.PLLPRE = 0;          // N2=2
+    //Fosc = 8MHz * 80/(4*2) = 60MHz for 8MHz input clock
+    PLLFBD = 78;                    // M = (PLLFDB+2)
+    CLKDIVbits.PLLPOST = 1;         // N2=4
+    CLKDIVbits.PLLPRE = 0;          // N1=2
     OSCTUN = 0;                     // Tune FRC oscillator, if FRC is used
 
     // Disable Watch Dog Timer
@@ -69,10 +69,10 @@ void uMBInit( void)
     ANSELE = 0;   // all inputs digital
     ANSELG = 0;   // all inputs digital
 
-    //3. configure PPS 
-    PPSUnLock;
+    //3. configure PPS (not required on the PIC24EP for standard Mikromedia apps
+//    PPSUnLock;
 
-// 4. UART
+//    UART
 //    PPSInput( PPS_U2RX,  PPS_RP10);     // U2RX =RP10 F4/pin 49
 //    PPSInput( PPS_U2CTS, PPS_RPI32);    // U2CTS=RP32 F12/pin40
 //    PPSOutput( PPS_RP17, PPS_U2TX);     // U2TX =RP17 F5/pin 50
@@ -81,11 +81,11 @@ void uMBInit( void)
 
 //    PPSOutput( PPS_RP23, PPS_OC1);      // OC1 =RP23 D2/pin 77
 
-    // Done, lock the PPS configuration
-    //    PPSLock;
+//    Done, lock the PPS configuration
+//    PPSLock;
 
 #ifdef _SFLASH
-    // Initialize the serial Flash CS I/O
+    // 4. Initialize the serial Flash CS I/O
     SST25_CS_LAT = 1;
     SST25_CS_TRIS = 0;
     FlashInit( &spi_config);

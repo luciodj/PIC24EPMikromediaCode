@@ -4,14 +4,16 @@
  */
 
 #include "xc.h"
-#include <rtcc.h>
+#include <rtcc.h>               // this requires adding /support to include path
 
 #include "PICconfig.h"
 
 #define LED_BLED                _RD2
 #define ConfigureBacklight()    _TRISD2 = 0
 
-void _ISR  _RTCCInterrupt( void)
+#define __RTCC_ISR    __attribute__((interrupt, shadow, no_auto_psv))
+
+void __RTCC_ISR  _RTCCInterrupt( void)
 {
     LED_BLED = 1 - LED_BLED;    // toggle LED_BLED output
     _RTCIF = 0;
@@ -31,7 +33,7 @@ int main( void )
     // 2. main loop
     while( 1)
     {
-        Sleep();   // go to sleep
+        Sleep();                // go to sleep
 
 
     } // main loop

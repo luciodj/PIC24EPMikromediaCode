@@ -32,9 +32,9 @@
 #define ConfigureBacklight()    _TRISD2 = 0
 
 // Mikromedia 24EP has 8MHz crystal
-// default PLL setting has M=50 N1=2 and N2=4 -> 50MHz primary clock 
+// By Default PLL setting has M=50 N1=2 and N2=4 -> 50MHz primary clock
 // -> 25MHz Instruction/peripheral clock
-// define a 1/4 second delay given a 25MHz peripheral clock and 1:256 prescaler
+// define a 1/4 second delay given peripheral clock and 1:256 prescaler
 #define DELAY                   25000000UL / 256 /4
 
 int main( void )
