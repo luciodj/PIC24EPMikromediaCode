@@ -2,20 +2,18 @@
  * File:   main.c
  * 
  * Chapter 3: Graphic Resources - Color Splashscreen
- * 
+ 
+ * Requires: MLA 1306
  */
-
-#include "xc.h"
 #include "PICconfig.h"
 #include "Graphics/Graphics.h"
-#include "Graphics/GOL.h"
 
 #include "resources.h"
-#include "uMedia.h"
+//#include "uMedia.h"   // used for screen capture
 
 int main( void )
 {
-    int width;
+    SHORT w1, w2, pad;
     char s[] = "Fonts and Bitmaps";
 
     // 1. init
@@ -27,20 +25,20 @@ int main( void )
     // 2. display centered banner
     SetColor( BRIGHTRED);           // set color
     SetFont( (void*) &GOLFontDefault);
-    width = GetTextWidth( s, (void*) &GOLFontDefault);
-    OutTextXY( (GetMaxX()-width)/2 , 0, s);
+    w1 = GetTextWidth( s, (void*) &GOLFontDefault);
+    OutTextXY( (GetMaxX()-w1)/2 , 0, s);
 
-    // 3. display  fingerprint bitmap
-    PutImage( 10, 60, (void*) &fingerprint, IMAGE_NORMAL);
-
-    // 4. display  fingerprint bitmap
-    PutImage( 130, 60, (void*) &flower, IMAGE_NORMAL);
+    // 3. display two bitmaps with padding
+    w1 = GetImageWidth( (void*)&fingerprint);
+    w2 = GetImageWidth( (void*)&flower);
+    pad = (GetMaxX()- w1 - w2) / 3;
+    PutImage( pad, 60, (void*) &fingerprint, IMAGE_NORMAL);
+    PutImage( pad + w1 + pad, 60, (void*) &flower, IMAGE_NORMAL);
 
 //    // capture screen
 //    uMBInit();
 //    FSInit();
 //    ScreenCapture( "3-COLOR.SCR");
-
 
     // main loop
     while( 1)

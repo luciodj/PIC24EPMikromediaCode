@@ -1,121 +1,68 @@
 /*
- * Project: 4-15Tiles
+ * Project: 4-15_Tiles
  * File:    main.c
  *
- * Requires: MAL 1306
+ * Requires: MLA 1306
  */
 
 #include "PICconfig.h"
 #include "LCDTerminal.h"
-#include "TouchScreen.h"
+#include "TouchGrid.h"
+#include "uMedia.h"
 #include "TimeDelay.h"
 
-#include "bitmaps.h"    // load tiles from bitmaps
+// load tiles from bitmaps
+#include "bitmaps.h"
+#include "droid36.h"
+
+unsigned sx = (GetMaxX()+1)/4;
+unsigned sy = (GetMaxY()+1)/4;
 
 unsigned m[4][4];
+unsigned style = 0;
+
 const void * images[] = {
-    &IMG0_0, &IMG1_0, &IMG2_0, &IMG3_0,
-    &IMG0_1, &IMG1_1, &IMG2_1, &IMG3_1,
-    &IMG0_2, &IMG1_2, &IMG2_2, &IMG3_2,
-    &IMG0_3, &IMG1_3, &IMG2_3, &IMG3_3
+    &IMG_0_0, &IMG_1_0, &IMG_2_0, &IMG_3_0,
+    &IMG_0_1, &IMG_1_1, &IMG_2_1, &IMG_3_1,
+    &IMG_0_2, &IMG_1_2, &IMG_2_2, &IMG_3_2,
+    &IMG_0_3, &IMG_1_3, &IMG_2_3, NULL
 };
 
 
-#define __ISR  __attribute__((interrupt, shadow, auto_psv))
-
-void __ISR _T3Interrupt( void)
+void paintTile( unsigned tx, unsigned ty)
 {
-    _T3IF = 0;
-    TouchDetectPosition();
-}
+    unsigned q = m[tx][ty]; // identify the tile
+    unsigned y = ty * sy;   // compute vertical coord
+    unsigned x = tx * sx;   // compute horiz coord
+    unsigned r = 8;         // tile rounding radius
+    char s[3];
 
-#define TICK_PERIOD( ms)  (GetPeripheralClock() * (ms)) / 8000
-
-void TickInit( unsigned period_ms)
-{
-    // Initialize Timer3
-    TMR3 = 0;
-    PR3 = TICK_PERIOD( period_ms);
-    T3CONbits.TCKPS = 1;        // Set prescale to 1:8
-    IFS0bits.T3IF = 0;          // Clear flag
-    IEC0bits.T3IE = 1;          // Enable interrupt
-    T3CONbits.TON = 1;          // Run timer
-}
-
-
-int TouchGet( void)
-{   // returns 10..1F if screen pressed, 0 = none
-    int  x, y, r;
-
-    // 1. get the latest reading
-    x = TouchGetX();  y = TouchGetY();
-
-    // 2. if one of the two is null the other is too
-    if (( x < 0) || ( y < 0))
-        return 0;
-
-    // 3. identify point on grid (4x4 = 0001yyxx)
-    r  = ((y / ( GetMaxY()/4)) <<2) + ( x / ( GetMaxX()/4) );
-    return r + 0x10;
-
-} // TouchGet
-
-
-int TouchGrid( void)
-{   // wait for a key pressed and debounce
-    int released = 0;           // released counter
-    int pressed = 0;            // pressed counter
-    int code;                   // grid code
-    int r = 0;                  // return value
-
-    // 1. wait for a key pressed for at least 10 loops
-    while ( pressed < 10)
+    if ( q < 15)
     {
-        code = TouchGet();
-        if ( code > 0) pressed++;
-        else  pressed = 0;
-
-        DelayMs( 1);
+        if ( style)
+            PutImage( x, y, (void*)images[ q], IMAGE_NORMAL);
+        else
+        {   // draw tiles as a rounded rectangle
+            SetColor( BRIGHTRED);
+//            FillBevel( x+r, y+r, x+sx-r, y+sy-r, r);
+            BevelGradient( x+r, y+r, x+sx-r, y+sy-r, r, RED, BRIGHTRED, 50, GRAD_DOUBLE_HOR);
+            // draw edges
+            SetColor( DARKGRAY);
+            Bevel( x+r, y+r, x+sx-r, y+sy-r, r);
+            // add the number using a large font and centering it
+            itoa( s, q+1, 10);
+            SetColor( WHITE);
+            SetFont( (void*)&DroidSans_36);
+            // center the number on the tile
+            int dx = (sx-GetTextWidth( s, (void*)&DroidSans_36))/2;
+            int dy = (sy-GetTextHeight((void*)&DroidSans_36))/2;
+            OutTextXY( x+dx, y+dy, s);
+        }
     }
-
-    // 2. wait for key released for at least 10 loops
-    while ( released < 10)
-        {
-        code = TouchGet();
-        if ( code > 0)
-        {
-            r = code;
-            released = 0;       // not released yet
-            pressed++;          // still pressed, keep counting
-        }
-        else released++;
-
-        DelayMs( 1);
-        }
-
-    // 3. check if a button was pushed longer than 500ms
-    if ( pressed > 500)
-        r += 0x80;              // add a flag in bit 7 of the code
-
-    // 4. return code
-    return r;
-
-} // TouchGrid
-
-
-void paintTile( unsigned tx, unsigned ty, unsigned color)
-{
-    //char s[6];
-    unsigned q = m[tx][ty];
-    unsigned y = ty * GetMaxY()/4;
-    unsigned x = tx * GetMaxX()/4;
-
-    if ( q>0)
-        PutImage( x, y, (void*)images[ q], IMAGE_NORMAL);
     else
     {
         SetColor( LCD_BACK);
-        Bar( x, y, x+(GetMaxX()/4), y+ (GetMaxY()/4));
+        Bar( x, y, x+sx-1, y+sy-1);
     }
  } // paintTile
 
@@ -124,64 +71,61 @@ void swapTiles( unsigned x, unsigned y, int dx, int dy)
 {
     // move the tile in the empty space
     m[x+dx][y+dy] = m[x][y];
-    paintTile( x+dx, y+dy, GREEN);
+    paintTile( x+dx, y+dy);
 
-    m[x][y] = 0;
-    paintTile( x, y, BRIGHTRED);
+    m[x][y] = 15;
+    paintTile( x, y);
 } // swapTiles
 
 
 int main( void )
 {
-    unsigned  q, x, y;
+    unsigned  x, y, k;
+    code_t    q;
 
-    // init the graphics
+    // 1. init the graphics
+    uMBInit();
     LCDInit();
     DisplayBacklightOn();
 
-    ANSELB=0xffff;
-    // 2. set timer 3 and enable interrupt
-    TickInit( 1);
-    
-    // 3. init touch module (do not use NVM to store calibration data)
-    TouchInit( NULL, NULL, NULL, NULL);
-    //TouchHardwareInit( NULL);
-    //TouchCalculateCalPoints();
-    LCDClear();
+    // 2. init the grid
+    TouchGridInit( 4, 4);
 
-    // 4. splash screen
-    LCDCenterString( -1, "15 Tiles Game");
-    LCDCenterString( +1, "Tap to start");
-    while( TouchGetX() < 0);    // wait for tap
-    while( TouchGetX() > 0);    // wait for release
+    // 3. splash screen
     LCDClear();
+    LCDCenterString( -3, "15 Tiles Game");
+    LCDCenterString( -1, "Select to start");
+    style = 1; m[1][2]=11; paintTile( 1, 2);    // images
+    style = 0; m[2][2]=14; paintTile( 2, 2);    // numbers
+    q = TouchGrid();
+    style = ( q.x >1) ? 0 : 1;
 
-    // 5. init the 4x4 matrix
-    q = 0;
+    // 4. init the 4x4 matrix
+    LCDClear();
+    k = 0;
     for( y=0; y<4; y++)
         for( x=0; x<4; x++)
         {
-            m[x][y]= q++;
-            paintTile( x, y, (q==1) ? BRIGHTRED : GREEN);
+            m[x][y]= k++;
+            paintTile( x, y);
         }
 
-    // 6. main loop
+    // 5. main loop
     while( 1 )
     {
         q = TouchGrid();
-        x = q & 3;
-        q >>=2;
-        y = q & 3;
+        x = q .x;
+        y = q .y;
 
 
         // check if near the 0 tile
-        if ((x>0) && ( m[x-1][y] == 0))
+        if ((x>0) && ( m[x-1][y] == 15))
             swapTiles( x, y, -1, 0);
-        if ((x<3) && ( m[x+1][y] == 0))
+        if ((x<3) && ( m[x+1][y] == 15))
             swapTiles( x, y, +1, 0);
-        if ((y>0) && ( m[x][y-1] == 0))
+        if ((y>0) && ( m[x][y-1] == 15))
             swapTiles( x, y, 0, -1);
-        if ((y<3) && ( m[x][y+1] == 0))
+        if ((y<3) && ( m[x][y+1] == 15))
             swapTiles( x, y, 0, +1);
 
 

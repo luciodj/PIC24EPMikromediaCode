@@ -42,11 +42,6 @@ void MP3Init( WORD mode)
     // double the codec clock frequency
     writeMP3Register( MP3_REG_CLOCKF, 0x2000);
 
-    // can change to full speed now
-    MP3_SPIENABLE = 0;      // SPI off
-    MP3_SPICON1 = 0x007E;
-    MP3_SPIENABLE = 1;      // SPI on
-
 } // MP3Init
 
 
@@ -57,7 +52,7 @@ WORD  writeMP3( BYTE b)
     return MP3_SPIBUF;      // return buffer content
 }
 
-void writeMP3Register( BYTE reg, unsigned w)
+void writeMP3Register( BYTE reg, WORD w)
 {
     MP3_DCS_Disable();      // disable data bus
     MP3_CS_Enable();        // enable command bus

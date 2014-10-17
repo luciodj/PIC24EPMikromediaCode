@@ -41,7 +41,7 @@
 #define USE_8BIT_PMP
 #define PMP_DATA_SETUP_TIME             (0)
 #define PMP_DATA_WAIT_TIME              (0)
-#define PMP_DATA_HOLD_TIME              (0)
+#define PMP_DATA_HOLD_TIME              (1)
 
 /*********************************************************************
  * Image orientation (can be 0, 90, 180, 270 degrees).

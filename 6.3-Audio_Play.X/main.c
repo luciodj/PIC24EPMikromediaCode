@@ -2,16 +2,13 @@
  * Project: Audio_Play
  * File:    main.c
  *
- * Requires: MAL 1306
+ * Requires: MLA 1306
  */
-
 #include "PICconfig.h"
-
 #include "Graphics/Graphics.h"
 #include "MDD File System/FSIO.h"
 #include "uMedia.h"
 #include "vs1053.h"
-
 
 int main( void )
 {
@@ -23,7 +20,7 @@ int main( void )
     // 1. initializations
     uMBInit();
     InitGraph();
-    SetColor( YELLOW);
+    SetColor( WHITE);
     ClearDevice();
     DisplayBacklightOn();
 
@@ -43,7 +40,7 @@ int main( void )
     ClearDevice();              // show green screen if successful initializing
 
     // try to open an MP3 file
-    if ( (fp = FSfopen( "SONG.mp3", "r")) == NULL)
+    if ( (fp = FSfopen( "SONG.MP3", "r")) == NULL)
     {
         SetColor( BRIGHTRED);
         ClearDevice();          // show red screen if could not find the file

@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>7-GDD_Accelerometer</name>
+            <name>7.4-GDD_Accelerometer</name>
             <creation-uuid>bd158b2f-3415-4d5d-8888-3b7280806e5a</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>

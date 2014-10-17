@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>7-GDD_Slider</name>
+            <name>7.3-GDD_Slider</name>
             <creation-uuid>42d57fec-06d7-4dc1-a05a-164d62984e5a</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>

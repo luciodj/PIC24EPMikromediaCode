@@ -3,7 +3,7 @@
  *
  * File:  main.c
  *
- * Requires: MAL 1306
+ * Requires: MLA 1306
  */
 
 #include "PICconfig.h"
@@ -25,11 +25,12 @@ int main( void )
     char *p, filename[32];
     DWORD address, i, scount;
 
+
     // 1. initializations
-    uMBInit();                                // init pins and ports
-    LCDInit();                                // inits terminal emulation
+    uMBInit();                  // init pins and ports
+    LCDInit();                  // inits terminal emulation
     DisplayBacklightOn();
-    TouchGridInit( GetMaxX()/3, GetMaxY()/3); // defines a 3x3 grid
+    TouchGridInit( 3, 3);       // defines a 3x3 grid
 
     // 2. splash screen
     LCDClear();

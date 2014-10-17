@@ -1,5 +1,5 @@
 /*****************************************************************************
- * FileName:        bitmaps.h
+ * FileName:        4.Solution.h
  * Processor:       PIC24F, PIC24H, dsPIC
  * Compiler:        MPLAB C30/XC16 (see release notes for tested revision)
  * Linker:          MPLAB LINK30/XC16
@@ -17,7 +17,7 @@
  * You should refer to the license agreement accompanying this Software
  * for additional information regarding your rights and obligations.
  *
- * SOFTWARE AND DOCUMENTATION ARE PROVIDED “AS IS” WITHOUT WARRANTY OF ANY
+ * SOFTWARE AND DOCUMENTATION ARE PROVIDED ‚ÄúAS IS‚Äù WITHOUT WARRANTY OF ANY
  * KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION, ANY WARRANTY
  * OF MERCHANTABILITY, TITLE, NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR
  * PURPOSE. IN NO EVENT SHALL MICROCHIP OR ITS LICENSORS BE LIABLE OR
@@ -31,7 +31,7 @@
  *
  *
  *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * AUTO-GENERATED CODE:  Graphics Resource Converter version: 3.28.15
+ * AUTO-GENERATED CODE:  Graphics Resource Converter version: 3.29.06
  *****************************************************************************/
 
 #ifndef BITMAPS_H_FILE
@@ -66,147 +66,138 @@
 
 /*********************************
  * Bitmap Structure
- * Label: IMG0_0
- * Description:  80x60 pixels, 16-bits per pixel
+ * Label: IMG_0_0
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG0_0;
-#define IMG0_0_WIDTH     (80)
-#define IMG0_0_HEIGHT    (60)
-#define IMG0_0_SIZE      (9606)
+extern const IMAGE_FLASH IMG_0_0;
+#define IMG_0_0_WIDTH     (80)
+#define IMG_0_0_HEIGHT    (60)
+#define IMG_0_0_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG0_1
- * Description:  80x60 pixels, 16-bits per pixel
+ * Label: IMG_0_1
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG0_1;
-#define IMG0_1_WIDTH     (80)
-#define IMG0_1_HEIGHT    (60)
-#define IMG0_1_SIZE      (9606)
+extern const IMAGE_FLASH IMG_0_1;
+#define IMG_0_1_WIDTH     (80)
+#define IMG_0_1_HEIGHT    (60)
+#define IMG_0_1_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG0_2
- * Description:  80x60 pixels, 16-bits per pixel
+ * Label: IMG_0_2
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG0_2;
-#define IMG0_2_WIDTH     (80)
-#define IMG0_2_HEIGHT    (60)
-#define IMG0_2_SIZE      (9606)
+extern const IMAGE_FLASH IMG_0_2;
+#define IMG_0_2_WIDTH     (80)
+#define IMG_0_2_HEIGHT    (60)
+#define IMG_0_2_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG0_3
- * Description:  80x59 pixels, 16-bits per pixel
+ * Label: IMG_0_3
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG0_3;
-#define IMG0_3_WIDTH     (80)
-#define IMG0_3_HEIGHT    (59)
-#define IMG0_3_SIZE      (9446)
+extern const IMAGE_FLASH IMG_0_3;
+#define IMG_0_3_WIDTH     (80)
+#define IMG_0_3_HEIGHT    (60)
+#define IMG_0_3_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG1_0
- * Description:  80x60 pixels, 16-bits per pixel
+ * Label: IMG_1_0
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG1_0;
-#define IMG1_0_WIDTH     (80)
-#define IMG1_0_HEIGHT    (60)
-#define IMG1_0_SIZE      (9606)
+extern const IMAGE_FLASH IMG_1_0;
+#define IMG_1_0_WIDTH     (80)
+#define IMG_1_0_HEIGHT    (60)
+#define IMG_1_0_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG1_1
- * Description:  80x60 pixels, 16-bits per pixel
+ * Label: IMG_1_1
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG1_1;
-#define IMG1_1_WIDTH     (80)
-#define IMG1_1_HEIGHT    (60)
-#define IMG1_1_SIZE      (9606)
+extern const IMAGE_FLASH IMG_1_1;
+#define IMG_1_1_WIDTH     (80)
+#define IMG_1_1_HEIGHT    (60)
+#define IMG_1_1_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG1_2
- * Description:  80x60 pixels, 16-bits per pixel
+ * Label: IMG_1_2
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG1_2;
-#define IMG1_2_WIDTH     (80)
-#define IMG1_2_HEIGHT    (60)
-#define IMG1_2_SIZE      (9606)
+extern const IMAGE_FLASH IMG_1_2;
+#define IMG_1_2_WIDTH     (80)
+#define IMG_1_2_HEIGHT    (60)
+#define IMG_1_2_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG1_3
- * Description:  80x59 pixels, 16-bits per pixel
+ * Label: IMG_1_3
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG1_3;
-#define IMG1_3_WIDTH     (80)
-#define IMG1_3_HEIGHT    (59)
-#define IMG1_3_SIZE      (9446)
+extern const IMAGE_FLASH IMG_1_3;
+#define IMG_1_3_WIDTH     (80)
+#define IMG_1_3_HEIGHT    (60)
+#define IMG_1_3_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG2_0
- * Description:  80x60 pixels, 16-bits per pixel
+ * Label: IMG_2_0
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG2_0;
-#define IMG2_0_WIDTH     (80)
-#define IMG2_0_HEIGHT    (60)
-#define IMG2_0_SIZE      (9606)
+extern const IMAGE_FLASH IMG_2_0;
+#define IMG_2_0_WIDTH     (80)
+#define IMG_2_0_HEIGHT    (60)
+#define IMG_2_0_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG2_1
- * Description:  80x60 pixels, 16-bits per pixel
+ * Label: IMG_2_1
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG2_1;
-#define IMG2_1_WIDTH     (80)
-#define IMG2_1_HEIGHT    (60)
-#define IMG2_1_SIZE      (9606)
+extern const IMAGE_FLASH IMG_2_1;
+#define IMG_2_1_WIDTH     (80)
+#define IMG_2_1_HEIGHT    (60)
+#define IMG_2_1_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG2_2
- * Description:  80x60 pixels, 16-bits per pixel
+ * Label: IMG_2_2
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG2_2;
-#define IMG2_2_WIDTH     (80)
-#define IMG2_2_HEIGHT    (60)
-#define IMG2_2_SIZE      (9606)
+extern const IMAGE_FLASH IMG_2_2;
+#define IMG_2_2_WIDTH     (80)
+#define IMG_2_2_HEIGHT    (60)
+#define IMG_2_2_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG2_3
- * Description:  80x59 pixels, 16-bits per pixel
+ * Label: IMG_2_3
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG2_3;
-#define IMG2_3_WIDTH     (80)
-#define IMG2_3_HEIGHT    (59)
-#define IMG2_3_SIZE      (9446)
+extern const IMAGE_FLASH IMG_2_3;
+#define IMG_2_3_WIDTH     (80)
+#define IMG_2_3_HEIGHT    (60)
+#define IMG_2_3_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG3_0
- * Description:  80x60 pixels, 16-bits per pixel
+ * Label: IMG_3_0
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG3_0;
-#define IMG3_0_WIDTH     (80)
-#define IMG3_0_HEIGHT    (60)
-#define IMG3_0_SIZE      (9606)
+extern const IMAGE_FLASH IMG_3_0;
+#define IMG_3_0_WIDTH     (80)
+#define IMG_3_0_HEIGHT    (60)
+#define IMG_3_0_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG3_1
- * Description:  80x60 pixels, 16-bits per pixel
+ * Label: IMG_3_1
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG3_1;
-#define IMG3_1_WIDTH     (80)
-#define IMG3_1_HEIGHT    (60)
-#define IMG3_1_SIZE      (9606)
+extern const IMAGE_FLASH IMG_3_1;
+#define IMG_3_1_WIDTH     (80)
+#define IMG_3_1_HEIGHT    (60)
+#define IMG_3_1_SIZE      (5318)
 /*********************************
  * Bitmap Structure
- * Label: IMG3_2
- * Description:  80x60 pixels, 16-bits per pixel
+ * Label: IMG_3_2
+ * Description:  80x60 pixels, 8-bits per pixel
  ***********************************/
-extern const IMAGE_FLASH IMG3_2;
-#define IMG3_2_WIDTH     (80)
-#define IMG3_2_HEIGHT    (60)
-#define IMG3_2_SIZE      (9606)
-/*********************************
- * Bitmap Structure
- * Label: IMG3_3
- * Description:  80x59 pixels, 16-bits per pixel
- ***********************************/
-extern const IMAGE_FLASH IMG3_3;
-#define IMG3_3_WIDTH     (80)
-#define IMG3_3_HEIGHT    (59)
-#define IMG3_3_SIZE      (9446)
+extern const IMAGE_FLASH IMG_3_2;
+#define IMG_3_2_WIDTH     (80)
+#define IMG_3_2_HEIGHT    (60)
+#define IMG_3_2_SIZE      (5318)
 #endif
 

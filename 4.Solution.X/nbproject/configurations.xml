@@ -26,6 +26,7 @@
         <itemPath>../uMB/TouchScreenResistive.c</itemPath>
         <itemPath>../uMB/LCDTerminal.c</itemPath>
         <itemPath>../uMB/LCDTerminalFont.c</itemPath>
+        <itemPath>/Users/m91329/MPLABXProjects/Mikromedia24EP/uMB/TouchGrid.c</itemPath>
       </logicalFolder>
       <itemPath>bitmaps.c</itemPath>
       <itemPath>main.c</itemPath>
@@ -39,6 +40,7 @@
   <sourceRootList>
     <Elem>../Microchip/Include/Graphics</Elem>
     <Elem>../Microchip/Graphics/Drivers</Elem>
+    <Elem>/Users/m91329/MPLABXProjects/Mikromedia24EP/uMB</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

@@ -12,6 +12,7 @@
 #define _GRAPHICSCONFIG_H
 
 #define COLOR_DEPTH    16
+#define USE_GRADIENT            // enable primitives that use gradient 
 
 //////////////////// COMPILE OPTIONS AND DEFAULTS ////////////////////
 
@@ -49,7 +50,7 @@
 *********************************************************************/
 #define USE_GOL                     // Enable Graphics Object Layer.
 //#define USE_BUTTON				// Enable Button Object.
-// USE_WINDOW				// Enable Window Object.
+//#define USE_WINDOW				// Enable Window Object.
 //#define USE_CHECKBOX			// Enable Checkbox Object.
 //#define USE_RADIOBUTTON			// Enable Radio Button Object.
 //#define USE_EDITBOX				// Enable Edit Box Object.

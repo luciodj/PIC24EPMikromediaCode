@@ -1,5 +1,5 @@
 /*
- * Project: 3.Solution
+ * Project: 3.Solution - printf
  * 
  * File:   main.c
  *
@@ -25,17 +25,6 @@ void Log( const char *fmt, ...)
 }
 
 
-int write( int handle, char *p, unsigned len )
-{
-    unsigned i = len;
-    
-    while ( i-- > 0)
-        LCDPutChar( *p++);
-
-    return len;
-}
-
-
 int main( void )
 {
     int i;
@@ -48,7 +37,7 @@ int main( void )
     // main loop
     while( 1 )
     {
-        //Log( "Hello World #%04x", i++);
+        Log( "Hello World #%04x", i++);
         printf( "Hello World #%04x", i++);
         //DelayMs(20);
 

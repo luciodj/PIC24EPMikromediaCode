@@ -1,7 +1,7 @@
 /********************************************************************
- Project:  8-CDC_Serial
- File:     main.c
- 
+ *  Project:  8-CDC_Serial
+ *
+ * File:     main.c
  ********************************************************************/
 
 #include <PICconfig.h>
@@ -14,34 +14,14 @@
 #include <M25P80.h>
 #include <uMedia.h>
 
-
-/** V A R I A B L E S ********************************************************/
-
 volatile int Xvalue, Yvalue;
 
-
-/********************************************************************/
 static void InitializeSystem(void)
 {
-    DRV_SPI_INIT_DATA si = SPI_FLASH_CONFIG;
-
     uMBInit();
-    // Configuring the auxiliary PLL, since the primary
-    // oscillator provides the source clock to the auxiliary
-    // PLL, the auxiliary oscillator is disabled. Note that
-    // the AUX PLL is enabled. The input 8MHz clock is divided
-    // by 2, multiplied by 24 and then divided by 2. Wait till
-    // the AUX PLL locks.
-    ACLKCON3 = 0x24C1;
-    ACLKDIV3 = 0x7;
-    ACLKCON3bits.ENAPLL = 1;
-    while(ACLKCON3bits.APLLCK != 1);
 
-
-    // intialize the Serial Flash
-    FlashInit( &si);
-
-    LCDInit(); DisplayBacklightOn();
+    LCDInit();
+    DisplayBacklightOn();
 
     TouchInit( NVMWrite, NVMRead, NVMSectorErase, NULL);
 

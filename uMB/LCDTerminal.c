@@ -281,3 +281,14 @@ void LCDCenterString( int p, char *s)
     LCDPutString( s);
 } // LCDCenterString
 
+
+// re-routes stdout to the LCD terminal emulator
+int write( int handle, char *p, unsigned len )
+{
+    unsigned i = len;
+
+    while ( i-- > 0)
+        LCDPutChar( *p++);
+
+    return len;
+}
