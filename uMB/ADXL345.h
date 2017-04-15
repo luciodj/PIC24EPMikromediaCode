@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   adxl345.h
  */
 
@@ -8,6 +8,7 @@
 #define USE_AND_OR
 
 #include <i2c.h>
+#include "GenericTypeDefs.h"
 
 #define ACC_ADDRESS         0x3A // default address
 #define ACC_BAUD_100kHz     157  //  Assuming 16MHz clock using Tabl1e 15-1 DS

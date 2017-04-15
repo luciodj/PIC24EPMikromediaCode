@@ -43,7 +43,7 @@ BYTE readACCRegister( BYTE reg)
     // 2. issue a read command
     RestartI2C2();    IdleI2C2();
     MasterWriteI2C2( ACC_ADDRESS + 1);  IdleI2C2();
-    
+
     //3. get one byte of data in
     r = MasterReadI2C2();
     Nop();
@@ -77,9 +77,9 @@ void writeACCRegister( BYTE reg, BYTE b)
 int ACCInit( void)
 {
     BYTE w;
-    
+
     // configure I2C port for accelerometer access
-	OpenI2C2( I2C_ON | I2C_7BIT_ADD | I2C_STR_EN, ACC_BAUD_100kHz);
+	OpenI2C2( I2C1_ON | I2C1_7BIT_ADD | I2C1_STR_EN, ACC_BAUD_100kHz);
     IdleI2C2();
 
 
@@ -90,7 +90,7 @@ int ACCInit( void)
 
     // 2. enable measurement
     writeACCRegister( 0x2D, 0x08 );     // write to POWER_CTL register
-    
+
     return 0;                           // Success
 } // ACC Init
 
@@ -101,7 +101,7 @@ int c;
 void readACCxyz( int* x, int* y, int* z)
 {
     int r;
-    
+
      // 1. select device and register
     AddressACC( ACC_X0);
 
@@ -132,7 +132,7 @@ void readACCxyz( int* x, int* y, int* z)
     AckI2C2(); IdleI2C2();          // ask for more
     r |= ( MasterReadI2C2() << 8);  // msb
     *z = r;
-    
+
     // 6. terminate sequence
     NotAckI2C2(); IdleI2C2();
     StopI2C2(); IdleI2C2();

@@ -14,7 +14,7 @@
  * Software only when embedded on a Microchip microcontroller or digital
  * signal controller, which is integrated into your product or third party
  * product (pursuant to the sublicense terms in the accompanying license
- * agreement).  
+ * agreement).
  *
  * You should refer to the license agreement accompanying this Software
  * for additional information regarding your rights and obligations.
@@ -36,29 +36,29 @@
  * 05/26/09     ...
  * 04/12/11     Graphics Library Version 3.00 Support
  * 10/09/11     Fixed WritePixel() in USE_16BIT_PMP mode
- * 02/29/12     1 BPP PutImage() routines processes images with reversed 
- *              bitfields. 
+ * 02/29/12     1 BPP PutImage() routines processes images with reversed
+ *              bitfields.
  * 03/05/12     - Enabled transparency support for PutImage()
  *              - Fixed problems with PutImage() when stretch = 2.
- *              - Added GetPixel() function.   
+ *              - Added GetPixel() function.
  * 07/02/12     Modified PutImageXBPPYYY() functions to use new API.
  * 10/01/13     Ported to IL9341
  *****************************************************************************/
-#include "HardwareProfile.h"
+//#include "HardwareProfile.h"
 
 #if defined GFX_USE_DISPLAY_CONTROLLER_IL9341
 
 #include "Compiler.h"
 #include "TimeDelay.h"
 #include "Graphics/DisplayDriver.h"
-#include "Graphics/IL9341.h"
+//#include "Graphics/IL9341.h"
 #include "Graphics/Primitive.h"
 
 #if defined (USE_GFX_PMP)
     #include "Graphics/gfxpmp.h"
 #elif defined (USE_GFX_EPMP)
     #include "Graphics/gfxepmp.h"
-#endif   
+#endif
 
 // Clipping region control
 SHORT       _clipRgn;
@@ -67,7 +67,7 @@ SHORT       _clipRgn;
 SHORT       _clipLeft;
 SHORT       _clipTop;
 SHORT       _clipRight;
-SHORT       _clipBottom; 
+SHORT       _clipBottom;
 
 // Color
 GFX_COLOR   _color;
@@ -197,7 +197,7 @@ void ResetDevice(void)
     // Initialize the device
     DriverInterfaceInit();
     DelayMs( 1);	// delay to let controller ready for next command
-	
+
     write_cmd(0x01);    // software reset
     DisplayDisable();
 
@@ -205,7 +205,7 @@ void ResetDevice(void)
     write_cmd(0x28);    // display off
     DisplayDisable();
 
-    write_cmd(0xcf);    
+    write_cmd(0xcf);
     DeviceWrite(0x00);
     DeviceWrite(0x83);
     DeviceWrite(0x30);
@@ -395,7 +395,7 @@ void ResetDevice(void)
 ********************************************************************/
 void TransparentColorEnable(GFX_COLOR color)
 {
-    _colorTransparent = color;    
+    _colorTransparent = color;
     _colorTransparentEnable = TRANSPARENT_COLOR_ENABLE;
 
 }
@@ -442,7 +442,7 @@ void PutPixel(SHORT x, SHORT y)
 *
 * PreCondition: none
 *
-* Input: x,y - pixel coordinates 
+* Input: x,y - pixel coordinates
 *
 * Output: pixel color
 *
@@ -450,18 +450,18 @@ void PutPixel(SHORT x, SHORT y)
 *
 * Overview: return pixel color at x,y position
 *
-* Note: This implementation assumes an 8bit Data interface. 
+* Note: This implementation assumes an 8bit Data interface.
 *       For other data interface, this function should be modified.
 *
 ********************************************************************/
 GFX_COLOR GetPixel(SHORT x, SHORT y)
 {
     BYTE red = 0, green = 0, blue = 0;
-    
+
     DisplayEnable();
     SetAddress(x, y);
 
-    DisplaySetData(); 
+    DisplaySetData();
     // dummy reads
     SingleDeviceRead();
     SingleDeviceRead();
@@ -475,13 +475,13 @@ GFX_COLOR GetPixel(SHORT x, SHORT y)
 
     DisplayDisable();
 
-    return ((WORD) (((((GFX_COLOR)(red) & 0xF8) >> 3) << 11) | ((((GFX_COLOR)(green) & 0xFC) >> 2) << 5) | (((GFX_COLOR)(blue) & 0xF8) >> 3))); 
+    return ((WORD) (((((GFX_COLOR)(red) & 0xF8) >> 3) << 11) | ((((GFX_COLOR)(green) & 0xFC) >> 2) << 5) | (((GFX_COLOR)(blue) & 0xF8) >> 3)));
 }
 
 /*********************************************************************
 * Function: IsDeviceBusy()
 *
-* Overview: Returns non-zero if LCD controller is busy 
+* Overview: Returns non-zero if LCD controller is busy
 *           (previous drawing operation is not completed).
 *
 * PreCondition: none
@@ -494,7 +494,7 @@ GFX_COLOR GetPixel(SHORT x, SHORT y)
 *
 ********************************************************************/
 WORD IsDeviceBusy(void)
-{  
+{
     return (0);
 }
 
@@ -556,7 +556,7 @@ WORD Bar(SHORT left, SHORT top, SHORT right, SHORT bottom)
 *
 * Side Effects: none
 *
-* Overview: clears screen with current color 
+* Overview: clears screen with current color
 *
 * Note: none
 *
@@ -662,7 +662,7 @@ void PutImage1BPP(SHORT left, SHORT top, FLASH_BYTE *image, BYTE stretch, PUTIMA
                         SetAddress(left + currentXLocation , top);
                     }
                     else
-#endif              
+#endif
                     {
                         currentXLocation++;
                         WritePixel(_color);

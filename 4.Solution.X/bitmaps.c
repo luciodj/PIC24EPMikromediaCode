@@ -86,7 +86,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_0_0[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_0_0[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_0_0 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -682,7 +682,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_0_1[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_0_1[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_0_1 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -1278,7 +1278,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_0_2[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_0_2[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_0_2 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -1874,7 +1874,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_0_3[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_0_3[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_0_3 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -2470,7 +2470,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_1_0[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_1_0[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_1_0 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -3066,7 +3066,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_1_1[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_1_1[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_1_1 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -3662,7 +3662,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_1_2[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_1_2[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_1_2 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -4258,7 +4258,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_1_3[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_1_3[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_1_3 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -4854,7 +4854,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_2_0[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_2_0[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_2_0 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -5450,7 +5450,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_2_1[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_2_1[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_2_1 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -6046,7 +6046,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_2_2[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_2_2[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_2_2 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -6642,7 +6642,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_2_3[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_2_3[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_2_3 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -7238,7 +7238,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_3_0[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_3_0[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_3_0 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -7834,7 +7834,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_3_1[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_3_1[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_3_1 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),
@@ -8430,7 +8430,7 @@ asm(".section .const, psv");
 asm(".section .const, psv, page");
 #endif
 
-extern FLASH_BYTE __IMG_3_2[] __attribute__((section("grc_images"), aligned(2)));
+extern FLASH_BYTE __IMG_3_2[] __attribute__((section("grc_images"), aligned(2), space(psv)));
 const IMAGE_FLASH IMG_3_2 =
 {
     (FLASH | IMAGE_MBITMAP | COMP_NONE),

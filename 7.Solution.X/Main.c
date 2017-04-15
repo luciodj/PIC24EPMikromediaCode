@@ -14,7 +14,7 @@
  * Software only when embedded on a Microchip microcontroller or digital
  * signal controller, which is integrated into your product or third party
  * product (pursuant to the sublicense terms in the accompanying license
- * agreement).  
+ * agreement).
  *
  * You should refer to the license agreement accompanying this Software
  * for additional information regarding your rights and obligations.
@@ -46,14 +46,13 @@
 #include "MDD File System/FSIO.h"
 #endif
 
-
 // Configuration bits
 #if defined(__dsPIC33F__) || defined(__PIC24H__)
 _FOSCSEL(FNOSC_PRI);
 _FOSC(FCKSM_CSECMD &OSCIOFNC_OFF &POSCMD_XT);
 _FWDT(FWDTEN_OFF);
 #elif defined(__dsPIC33E__) || defined(__PIC24E__)
-_FOSCSEL(FNOSC_FRC);			
+_FOSCSEL(FNOSC_FRC);
 _FOSC(FCKSM_CSECMD & POSCMD_XT & OSCIOFNC_OFF & IOL1WAY_OFF);
 _FWDT(FWDTEN_OFF);
 _FPOR(FPWRT_PWR128 & BOREN_ON & ALTI2C1_ON & ALTI2C2_ON);
@@ -76,29 +75,29 @@ _CONFIG2(FNOSC_PRIPLL & POSCMOD_XT) // Primary XT OSC with PLL
 _CONFIG1(JTAGEN_OFF & FWDTEN_OFF)   // JTAG off, watchdog timer off
     #endif
 	#if defined (__PIC24FJ256GB210__)
-_CONFIG1( WDTPS_PS32768 & FWPSA_PR128 & ALTVREF_ALTVREDIS & WINDIS_OFF & FWDTEN_OFF & ICS_PGx2 & GWRP_OFF & GCP_OFF & JTAGEN_OFF) 
+_CONFIG1( WDTPS_PS32768 & FWPSA_PR128 & ALTVREF_ALTVREDIS & WINDIS_OFF & FWDTEN_OFF & ICS_PGx2 & GWRP_OFF & GCP_OFF & JTAGEN_OFF)
 _CONFIG2( POSCMOD_XT & IOL1WAY_OFF & OSCIOFNC_OFF & OSCIOFNC_OFF & FCKSM_CSDCMD & FNOSC_PRIPLL & PLL96MHZ_ON & PLLDIV_DIV2 & IESO_OFF)
-_CONFIG3( WPFP_WPFP255 & SOSCSEL_SOSC & WUTSEL_LEG & WPDIS_WPDIS & WPCFG_WPCFGDIS & WPEND_WPENDMEM) 
+_CONFIG3( WPFP_WPFP255 & SOSCSEL_SOSC & WUTSEL_LEG & WPDIS_WPDIS & WPCFG_WPCFGDIS & WPEND_WPENDMEM)
 	#endif
 	#if defined (__PIC24FJ256DA210__)
-_CONFIG1( WDTPS_PS32768 & FWPSA_PR128 & ALTVREF_ALTVREDIS & WINDIS_OFF & FWDTEN_OFF & ICS_PGx2 & GWRP_OFF & GCP_OFF & JTAGEN_OFF) 
+_CONFIG1( WDTPS_PS32768 & FWPSA_PR128 & ALTVREF_ALTVREDIS & WINDIS_OFF & FWDTEN_OFF & ICS_PGx2 & GWRP_OFF & GCP_OFF & JTAGEN_OFF)
 _CONFIG2( POSCMOD_XT & IOL1WAY_OFF & OSCIOFNC_OFF & OSCIOFNC_OFF & FCKSM_CSDCMD & FNOSC_PRIPLL & PLL96MHZ_ON & PLLDIV_DIV2 & IESO_OFF)
-_CONFIG3( WPFP_WPFP255 & SOSCSEL_EC & WUTSEL_LEG & ALTPMP_ALTPMPEN & WPDIS_WPDIS & WPCFG_WPCFGDIS & WPEND_WPENDMEM) 
-	#endif	
+_CONFIG3( WPFP_WPFP255 & SOSCSEL_EC & WUTSEL_LEG & ALTPMP_ALTPMPEN & WPDIS_WPDIS & WPCFG_WPCFGDIS & WPEND_WPENDMEM)
+	#endif
 #endif
 /////////////////////////////////////////////////////////////////////////////
-// SPI Device Initialization Function 
+// SPI Device Initialization Function
 /////////////////////////////////////////////////////////////////////////////
 #if defined (USE_SST25VF016)
     // initialize GFX3 SST25 flash SPI
-    #define FlashInit(pInitData) SST25Init((DRV_SPI_INIT_DATA*)pInitData)                    
+    #define FlashInit(pInitData) SST25Init((DRV_SPI_INIT_DATA*)pInitData)
 #elif defined (USE_MCHP25LC256)
     // initialize EEPROM on Explorer 16
-    #define FlashInit(pInitData) MCHP25LC256Init((DRV_SPI_INIT_DATA*)pInitData)  
-#elif defined (USE_M25P80)       
+    #define FlashInit(pInitData) MCHP25LC256Init((DRV_SPI_INIT_DATA*)pInitData)
+#elif defined (USE_M25P80)
     #define FlashInit(pInitData) SST25Init((DRV_SPI_INIT_DATA*)pInitData)
 #endif
-  
+
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -111,17 +110,17 @@ _CONFIG3( WPFP_WPFP255 & SOSCSEL_EC & WUTSEL_LEG & ALTPMP_ALTPMPEN & WPDIS_WPDIS
             #ifdef USE_TOUCHSCREEN_AR1020
                 const DRV_SPI_INIT_DATA ar1020SpiInit = {AR1020_SPI_CHANNEL,    44, 0, 0, 0, 0, 0};
             #endif
-        #else    
+        #else
             const DRV_SPI_INIT_DATA SPI_Init_Data = {SST25_SPI_CHANNEL, 3, 6, 0, 1, 1, 0};
             #ifdef USE_TOUCHSCREEN_AR1020
-                const DRV_SPI_INIT_DATA ar1020SpiInit = {AR1020_SPI_CHANNEL,    2,  3, 0, 0, 0, 0};        
+                const DRV_SPI_INIT_DATA ar1020SpiInit = {AR1020_SPI_CHANNEL,    2,  3, 0, 0, 0, 0};
             #endif
         #endif
-    #elif defined (USE_MCHP25LC256)       
-        const DRV_SPI_INIT_DATA SPI_Init_Data = {MCHP25LC256_SPI_CHANNEL, 6, 3, 0, 1, 1, 0};    
+    #elif defined (USE_MCHP25LC256)
+        const DRV_SPI_INIT_DATA SPI_Init_Data = {MCHP25LC256_SPI_CHANNEL, 6, 3, 0, 1, 1, 0};
     #elif defined (USE_M25P80)
             const DRV_SPI_INIT_DATA SPI_Init_Data = {SST25_SPI_CHANNEL, 3, 6, 0, 1, 1, 0};
-    #endif    
+    #endif
 #endif
 
 /////////////////////////////////////////////////////////////////////////////
@@ -193,7 +192,7 @@ int main(void)
         if(GOLDraw())               // Draw GOL object
         {
             TouchGetMsg(&msg);      // Get message from touch screen
-			
+
             #if (NUM_GDD_SCREENS > 1)
 			// GDD Readme:
 			// The following line of code allows a GDD user to touch the touchscreen
@@ -203,7 +202,7 @@ int main(void)
 			// Also note that widget/object names can be found in GDD_Screens.h
 			if(msg.uiEvent == EVENT_RELEASE) GDDDemoNextScreen();
 			#endif
-			
+
             GOLMsg(&msg);           // Process message
         }
 
@@ -248,7 +247,7 @@ WORD GOLMsgCallback(WORD objMsg, OBJ_HEADER *pObj, GOL_MSG *pMsg)
     objectID = GetObjID(pObj);
 
     GDDDemoGOLMsgCallback(objMsg, pObj, pMsg);
-    
+
     // Add additional code here...
 #ifdef _SCREENCAPTURE
     if ( pObj->ID == WIN_8)
@@ -257,7 +256,6 @@ WORD GOLMsgCallback(WORD objMsg, OBJ_HEADER *pObj, GOL_MSG *pMsg)
         ScreenCapture( "GDDAcc.scr");
     }
 #endif
-
 
     return (1);
 }
@@ -310,7 +308,7 @@ void __T3_ISR _T3Interrupt(void)
         TMRX = 0;
         TMRXflag = 1;
     }
-    
+
     TouchDetectPosition();
 }
 
@@ -342,7 +340,7 @@ void TickInit(void)
     IEC0bits.T3IE = 1;  //Enable interrupt
     T3CONbits.TON = 1;  //Run timer
     #endif
-    
+
 }
 
 
@@ -358,7 +356,7 @@ void InitializeBoard(void)
 {
 
     #if defined (PIC24FJ256DA210_DEV_BOARD) && defined(USE_KEYBOARD)
-    
+
      ANSA = 0x0000;
      ANSB = 0x0020;		// RB5 as potentiometer input
      ANSC = 0x0010;		// RC4 as touch screen X+, RC14 as external source of secondary oscillator
@@ -366,7 +364,7 @@ void InitializeBoard(void)
      ANSE = 0x0000;		// RE9 used as S2
      ANSF = 0x0000;
      ANSG = 0x0080;		// RG8 used as S1, RG7 as touch screen Y+
-        
+
     #else
         /////////////////////////////////////////////////////////////////////////////
         // ADC Explorer 16 Development Board Errata (work around 2)
@@ -391,7 +389,7 @@ void InitializeBoard(void)
         // Fosc= Fin*M/(N1*N2), Fcy=Fosc/2
         #if defined(__dsPIC33E__) || defined(__PIC24E__)
 			//Fosc = 8M * 60/(2*2) = 120MHz for 8M input clock
-			PLLFBD = 58;    			// M=60         
+			PLLFBD = 58;    			// M=60
 		#else
         	// Fosc= 8M*40(2*2)=80Mhz for 8M input clock
         	PLLFBD = 38;                    // M=40
@@ -399,22 +397,22 @@ void InitializeBoard(void)
         CLKDIVbits.PLLPOST = 0;         // N1=2
         CLKDIVbits.PLLPRE = 0;          // N2=2
         OSCTUN = 0;                     // Tune FRC oscillator, if FRC is used
-    
+
         // Disable Watch Dog Timer
         RCONbits.SWDTEN = 0;
-    
+
         // Clock switching to incorporate PLL
         __builtin_write_OSCCONH(0x03);  // Initiate Clock Switch to Primary
-    
+
         // Oscillator with PLL (NOSC=0b011)
         __builtin_write_OSCCONL(0x01);  // Start clock switching
         while(OSCCONbits.COSC != 0b011);
-    
-        // Wait for Clock switch to occur	
+
+        // Wait for Clock switch to occur
         // Wait for PLL to lock
         while(OSCCONbits.LOCK != 1)
         { };
- 
+
        #if defined(__dsPIC33F__) || defined(__PIC24H__)
         // Set PMD0 pin functionality to digital
         AD1PCFGL = AD1PCFGL | 0x1000;
@@ -424,20 +422,20 @@ void InitializeBoard(void)
             AD1PCFGLbits.PCFG7 = 1;
             AD1PCFGLbits.PCFG8 = 1;
         #endif
-        
+
         #elif defined(__dsPIC33E__) || defined(__PIC24E__)
             ANSELE = 0x00;
             ANSELDbits.ANSD6 = 0;
 
 		    // Set all touch screen related pins to Analog mode.
-	        ANSELBbits.ANSB11 = 1; 
+	        ANSELBbits.ANSB11 = 1;
         #endif
 
     #elif defined(__PIC32MX__)
         INTEnableSystemMultiVectoredInt();
         SYSTEMConfigPerformance(GetSystemClock());
     #endif // #if defined(__dsPIC33F__) || defined(__PIC24H__)
-    
+
 
     #if defined (EXPLORER_16)
 /************************************************************************
@@ -451,14 +449,14 @@ void InitializeBoard(void)
 	#endif // #if defined (EXPLORER_16)
 
     // Initialize graphics library and create default style scheme for GOL
-    GOLInit();  
-    
+    GOLInit();
+
 // Set the other chip selects to a known state
 #ifdef MIKRO_BOARD
     // SD Card chip select
     LATGbits.LATG9 = 1;
     TRISGbits.TRISG9 = 0;
-    
+
     // MP3 Codac
     // reset
     LATAbits.LATA5 = 0;
@@ -469,40 +467,44 @@ void InitializeBoard(void)
     // chip select
     LATAbits.LATA3 = 1;
     TRISAbits.TRISA3 = 0;
-
+#if defined (__PIC24EP512GU810__)
+    ANSELBbits.ANSB11 = 1;
+    ANSELBbits.ANSB10 = 1;
+#else
     AD1PCFGbits.PCFG11 = 1;
     AD1PCFGbits.PCFG10 = 1;
 #endif
+#endif
 
     //The following are PIC device specific settings for the SPI channel
-    //used. 
-    
+    //used.
+
     //Set IOs directions for SST25 SPI
     #if defined (GFX_PICTAIL_V3) || defined (MEB_BOARD) || defined(GFX_PICTAIL_LCC) || defined(MIKRO_BOARD) || defined(GFX_PICTAIL_V3E)
-	    
+
         SST25_CS_LAT = 1;
         SST25_CS_TRIS = 0;
-  
+
         #ifndef __PIC32MX__
             SST25_SCK_TRIS = 0;
             SST25_SDO_TRIS = 0;
             SST25_SDI_TRIS = 1;
-            #if defined(__PIC24FJ256GB210__) || defined(__dsPIC33E__) || defined(__PIC24E__)
+            #if defined(__PIC24FJ256GB210__) || defined(__dsPIC33E__)
             	SST25_SDI_ANS = 0;
     	    #endif
         #endif
     #elif defined (PIC24FJ256DA210_DEV_BOARD)
         SST25_CS_LAT = 1;
         SST25_CS_TRIS = 0;
-    
-        // Set the pins to be digital 
+
+        // Set the pins to be digital
     	SST25_SDI_ANS = 0;
         SST25_SDO_ANS = 0;
 
         SST25_SCK_TRIS = 0;
         SST25_SDO_TRIS = 0;
         SST25_SDI_TRIS = 1;
-        
+
 	#endif
 
     // set the peripheral pin select for the PSI channel used
@@ -510,7 +512,7 @@ void InitializeBoard(void)
         AD1PCFGL = 0xFFFF;
         RPOR9bits.RP18R = 11;                   // assign RP18 for SCK2
         RPOR8bits.RP16R = 10;                   // assign RP16 for SDO2
-        RPINR22bits.SDI2R = 17;                 // assign RP17 for SDI2	
+        RPINR22bits.SDI2R = 17;                 // assign RP17 for SDI2
     #elif defined(__PIC24FJ256GB110__) || defined(__PIC24FJ256GA110__) || defined (__PIC24FJ256GB210__)
         __builtin_write_OSCCONL(OSCCON & 0xbf); // unlock PPS
         RPOR10bits.RP21R = 11;                  // assign RP21 for SCK2
@@ -537,14 +539,14 @@ void InitializeBoard(void)
 
 	// initialize the Flash Memory driver
     FlashInit(&SPI_Init_Data);
-   
+
     // initialize the timer that manages the tick counter
-    TickInit(); 
-                      
+    TickInit();
+
     // initialize the components for Resistive Touch Screen
-    TouchInit(NVMWrite, NVMRead, NVMSectorErase, TOUCH_INIT_VALUES);   
-                
+    TouchInit(NVMWrite, NVMRead, NVMSectorErase, TOUCH_INIT_VALUES);
+
     HardwareButtonInit();           	// Initialize the hardware buttons
 
-}    
+}
 

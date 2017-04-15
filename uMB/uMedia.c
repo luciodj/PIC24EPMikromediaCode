@@ -1,7 +1,7 @@
 /*
  * uMedia.c
  *
- * PIC24 Mikromedia 
+ * PIC24 Mikromedia
  */
 
 #include "uMedia.h"
@@ -79,7 +79,7 @@ void uMBInit( void)
 //    PPSOutput( PPS_RP31, PPS_U2RTS);    // U2RTS=RP31 F13pin 39
 
 
-//    PPSOutput( PPS_RP23, PPS_OC1);      // OC1 =RP23 D2/pin 77
+//    PPSOutput( PPS_RP66, PPS_OC1);      // OC1 =RP66 D2/pin 66
 
 //    Done, lock the PPS configuration
 //    PPSLock;
@@ -123,4 +123,3 @@ void ScreenCapture( char *filename)
     }
 }
 #endif // _SCREENCAPTURE
- 

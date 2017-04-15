@@ -1,28 +1,46 @@
-# Graphcis, Touch, Sound and USB #
-##PIC24EP Mikromedia##
+Graphcis, Touch, Sound and USB
+==============================
 
-### What is this repository for? ###
+PIC24EP Mikromedia
+------------------
 
-* This repository contains the source code for all the projects and exercises offered in the book "Graphics, Touch, Sound and USB" (http://blog.flyingpic24.com/gtsu)
-* It contains the PIC24 EP Mikromedia specific version of all the Board Support Packages (/uMB folder)
-* Other Mikromedia versions are available or currently in development including (PIC24, PIC32, PIC32 Plus…)
+### What is this repository for?
 
-### How do I get set up? ###
+-   This repository contains the source code for all the projects and exercises
+    offered in the book "Graphics, Touch, Sound and USB"
+    (http://blog.flyingpic24.com/gtsu)
 
-There are two options: Download the ZIP file or Clone the repository (using Mercurial)
+-   It contains the PIC24 EP Mikromedia specific version of all the Board
+    Support Packages (/uMB folder)
 
-Note that the Mercurial repository provides the most recent (and bug free) version available at any given point in time while the ZIP file is "frozen" to a specific version.
+-   Other Mikromedia versions are available or currently in development
+    including (PIC24, PIC32, PIC32 Plus…)
 
-In both cases you will need then to follow the instructions provided in Chapter 1 to copy the entire MLA/Microchip folder to your working directory.
+### How do I get set up?
 
-Dependencies: 
+There are two options: Download the ZIP file or Clone the repository (using
+Mercurial)
 
-* MPLAB X 1.8 or later
-* XC16 v.1.21 or later
-* MLA version 2013-06-15 (aka "legacy" MLA)
+Note that the Mercurial repository provides the most recent (and bug free)
+version available at any given point in time while the ZIP file is "frozen" to a
+specific version.
 
-### Who do I talk to? ###
+In both cases you will need then to follow the instructions provided in Chapter
+1 to copy the entire MLA/Microchip folder to your working directory.
 
-* If you find bugs or errata, please do not hesitate to write to the author at: pilot@flyingpic24.com
+Dependencies:
+
+-   MPLAB X 3.51 or later
+
+-   XC16 v.1.31 or later
+
+-   MLA version 2013-06-15 (aka "legacy" MLA)
+
+-   PIC24E Peripheral Libraries 2.0 (require separate download)
+
+### Who do I talk to?
+
+-   If you find bugs or errata, please do not hesitate to write to the author
+    at: pilot\@flyingpic24.com
 
 Your contributions are welcome!
