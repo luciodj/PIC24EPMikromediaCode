@@ -14,7 +14,7 @@ PIC24EP Mikromedia
     Support Packages (/uMB folder)
 
 -   Other Mikromedia versions are available or currently in development
-    including (PIC24, PIC32, PIC32 Plusâ€¦)
+    including (PIC24, PIC32, PIC32 Plus…)
 
 ### How do I get set up?
 
@@ -41,6 +41,6 @@ Dependencies:
 ### Who do I talk to?
 
 -   If you find bugs or errata, please do not hesitate to write to the author
-    at: pilot\@flyingpic24.com
+    at: pilot@flyingpic24.com
 
 Your contributions are welcome!
